@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics; 
 
 namespace Stewart
 {
@@ -67,6 +68,12 @@ namespace Stewart
                             else if(text == "maximize")
                             {
                                 WindowState = WindowState.Maximized; 
+                            }
+                            else if(text == "playgame")
+                            {
+                                WindowState = WindowState.Minimized;
+                                Process.Start(@"C:\Users\Ben\Desktop\jnes_1_1_1\Jnes.exe",
+                                    @"C:\Users\Ben\Desktop\jnes_1_1_1\mod2.nes"); 
                             }
                             else
                             {
