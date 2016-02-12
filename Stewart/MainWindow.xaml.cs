@@ -75,6 +75,14 @@ namespace Stewart
                                 Process.Start(@"C:\Users\Ben\Desktop\jnes_1_1_1\Jnes.exe",
                                     @"C:\Users\Ben\Desktop\jnes_1_1_1\mod2.nes"); 
                             }
+                            else if(text == "killgame")
+                            {
+                                Process[] procs = Process.GetProcessesByName("Jnes");
+                                foreach (Process proc in procs)
+                                {
+                                    proc.Kill();
+                                }
+                            }
                             else
                             {
                                 _voice.SpeakAsync(text);
